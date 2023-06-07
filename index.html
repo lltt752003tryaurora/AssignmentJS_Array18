@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment Array</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+        button {
+            text-align: left;
+        }
+    </style>
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <h1>Bài tập về mảng</h1>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name=""
+        id="soNguyen"
+        aria-describedby="helpId"
+        placeholder="Nhập phần tử muốn thêm vào mảng"
+      />
+      <button class="btn btn-success bg-opacity-75 mt-3" id="themPhanTu">Thêm</button>
+      <button class="btn btn-success bg-opacity-75 mt-3" id="hienThiMang">Hiển thị mảng đang có</button>
+      <button class="btn btn-success bg-opacity-75 mt-3" id="xoahet">Xóa hết các phần tử đang có trong mảng</button>
+      <div class="bg-secondary bg-opacity-75 text-black p-3 rounded-3 mt-3 mb-5"  id="hienthi"></div>
+      <hr>
+    </div>
+
+    <div class="d-flex align-items-start mt-3">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <button class="nav-link active" id="cau1" data-bs-toggle="pill" data-bs-target="#kquac1"  role="tab" aria-controls="kquac1" aria-selected="true">1.Tổng các số dương</button>
+          <button class="nav-link" id="cau2" data-bs-toggle="pill" data-bs-target="#kquac2"  role="tab" aria-controls="kquac2" aria-selected="false">2.Đếm số dương</button>
+          <button class="nav-link" id="cau3" data-bs-toggle="pill" data-bs-target="#kquac3"  role="tab" aria-controls="kquac3" aria-selected="false">3.Tìm số nhỏ nhất</button>
+          <button class="nav-link" id="cau4" data-bs-toggle="pill" data-bs-target="#kquac4"  role="tab" aria-controls="kquac4" aria-selected="false">4.Tìm số dương nhỏ nhất</button>
+          <button class="nav-link" id="cau5" data-bs-toggle="pill" data-bs-target="#kquac5"  role="tab" aria-controls="kquac5" aria-selected="false">5.Tìm số chẵn cuối cùng</button>
+          <button class="nav-link" id="cau6" data-bs-toggle="pill" data-bs-target="#kquac6"  role="tab" aria-controls="kquac6" aria-selected="false">6.Đổi chỗ 2 vị trí trong mảng</button>
+          <button class="nav-link" id="cau7" data-bs-toggle="pill" data-bs-target="#kquac7"  role="tab" aria-controls="kquac7" aria-selected="false">7.Sắp xếp tăng dần</button>
+          <button class="nav-link" id="cau8" data-bs-toggle="pill" data-bs-target="#kquac8"  role="tab" aria-controls="kquac8" aria-selected="false">8.Tìm số nguyên tố đầu tiên</button>
+          <button class="nav-link" id="cau9" data-bs-toggle="pill" data-bs-target="#kquac9"  role="tab" aria-controls="kquac9" aria-selected="false">9.Đếm số nguyên</button>
+          <button class="nav-link" id="cau10" data-bs-toggle="pill" data-bs-target="#kquac10"  role="tab" aria-controls="kquac10" aria-selected="false">10.So sánh số lượng số âm và dương</button>
+        </div>
+        <div class="tab-content" id="ketQua">
+          <div class="tab-pane fade show active" id="kquac1">
+            <button class="btn btn-success bg-opacity-75" id="tinhc1">Tính tổng</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc1"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac2">
+            <button class="btn btn-success bg-opacity-75" id="tinhc2">Đếm số dương</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc2"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac3">
+            <button class="btn btn-success bg-opacity-75" id="tinhc3">Tìm số nhỏ nhất</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc3"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac4">
+            <button class="btn btn-success bg-opacity-75" id="tinhc4">Tìm số dương nhỏ nhất</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc4"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac5">
+            <button class="btn btn-success bg-opacity-75" id="tinhc5">Tìm số chẵn cuối cùng</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc5"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac6">
+            <div class="d-flex gap-3">
+                <div class="mb-3">
+                  <input type="text"
+                    class="form-control" name="" id="c6vt1" aria-describedby="helpId" placeholder="Vị trí thứ 1">
+                </div>
+                <div class="mb-3">
+                    <input type="text"
+                      class="form-control" name="" id="c6vt2" aria-describedby="helpId" placeholder="Vị trí thứ 2">
+                  </div>
+            </div>
+            <button class="btn btn-success bg-opacity-75 w-100" id="tinhc6">Đổi chỗ</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc6"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac7">
+            <button class="btn btn-success bg-opacity-75" id="tinhc7">Sắp xếp mảng tăng dần</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc7"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac8">
+            <button class="btn btn-success bg-opacity-75" id="tinhc8">Tìm số nguyên tố đầu tiên</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc8"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac9">
+            <button class="btn btn-success bg-opacity-75" id="tinhc9">Đếm số nguyên</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc9"></div>
+          </div>
+          <div class="tab-pane fade" id="kquac10">
+            <button class="btn btn-success bg-opacity-75" id="tinhc10">So sánh số lượng số âm và dương</button>
+            <div class="bg-danger bg-opacity-75 text-white p-3 rounded-3 mt-3 mb-5" id="xuatc10"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
