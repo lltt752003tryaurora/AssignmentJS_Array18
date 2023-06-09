@@ -78,7 +78,7 @@ document.getElementById("tinhc4").onclick = function () {
   }
   document.getElementById("xuatc4").innerHTML = `
     Số dương nhỏ nhất trong mảng là: ${minVal}
-    `;
+    `;AAAAAA
 };
 
 //Tìm số chẵn cuối cùng
@@ -115,7 +115,7 @@ document.getElementById("tinhc6").onclick = function () {
         `
         return;
     } else {
-        let temp;
+        var temp = 0;
         temp = mang_SN[v1];
         mang_SN[v1] = mang_SN[v2];
         mang_SN[v2] = temp;
@@ -132,21 +132,19 @@ document.getElementById("tinhc6").onclick = function () {
 // Sắp xếp tăng dần
 document.getElementById("tinhc7").onclick = function () {
     var len = mang_SN.length;
-    for (var i = 0; i < len-1; i++) {
-        for (var j =i+1; j < len; j++) {
-            if (mang_SN[i] > mang_SN[j]) {
-                let temp = mang_SN[i];
-                mang_SN[i] = mang_SN[j];
-                mang_SN[j] = temp;
-            }
-        }
-    }
-    var content = "";
-    for (var i = 0; i < len; i++) {
-        content += mang_SN[i] + "  ";
-    }
+    // for (var i = 0; i < len-1; i++) {
+    //     for (var j =i+1; j < len; j++) {
+    //         if (mang_SN[i] > mang_SN[j]) {
+    //             let temp = mang_SN[i];
+    //             mang_SN[i] = mang_SN[j];
+    //             mang_SN[j] = temp;
+    //         }
+    //     }
+    // }
+    var sx_mang = mang_SN.sort();
+    sx_mang = sx_mang.join(',');
     document.getElementById("xuatc7").innerHTML = `
-    Mảng sau khi sắp xếp tăng dần là: ${content}
+    Mảng sau khi sắp xếp tăng dần là: ${sx_mang}
     `
 }
 
