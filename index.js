@@ -163,7 +163,6 @@ function KiemTraSNT (bien) {
 //Tìm số nguyên tố đầu tiên 
 function TimSNT_DauTien () {
     var len = mang_SN.length;
-    debugger
     for (var i = 0; i < len; i++) {
         if (KiemTraSNT(mang_SN[i]) == true) {
             return mang_SN[i];
@@ -217,3 +216,23 @@ document.getElementById("tinhc10").onclick = function () {
         `
     }
 }
+
+
+// function findHighestAndLowest(array){
+//   var len =  array.length;
+//   var maxVal = array[0];
+//   var maxIndex = 0;
+//   var minVal = array[0];
+//   var minIndex = 0;
+//   for (var i = 1; i < len;i++) {
+//       if (maxVal < array[i]) {
+//           maxVal = array[i];
+//           maxIndex = i;
+//       }
+//       if (minVal > array[i]){
+//            minVal = array[i];
+//            minIndex = i;
+//       }
+//   }
+//   return `{ highest: { value: ${maxVal}, index: ${maxIndex} }, lowest: { value: ${minVal}, index: ${minIndex} } }`;
+// }
