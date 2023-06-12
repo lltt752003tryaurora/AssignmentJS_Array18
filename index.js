@@ -1,5 +1,10 @@
 var mang_SN = [];
 //Thêm phần tử
+/*
++input: lấy giá trị phần tử cần thêm
++process: sử dụng hàm push để đẩy dữ liệu vào mảng
++output: cho user biết đã push vào hay chưa
+*/
 document.getElementById("themPhanTu").onclick = function () {
   var pt_moi = document.getElementById("soNguyen").value * 1;
   mang_SN.push(pt_moi);
@@ -9,6 +14,11 @@ document.getElementById("themPhanTu").onclick = function () {
 };
 
 //Hiển thị mảng
+/*
++input: lấy thông tin dữ liệu của các phần tử trong mảng 
++process: dùng vòng for duyệt qua từng phần tử trong mảng để xuất
++output: xuất ra dữ liệu của mảng bao gồm những phần tử nào
+*/
 document.getElementById("hienThiMang").onclick = function () {
   var content = "";
   for (var i = 0; i < mang_SN.length; i++) {
@@ -23,6 +33,11 @@ document.getElementById("hienThiMang").onclick = function () {
 };
 
 //Xóa hết các phần tử trong mảng
+/*
++input: lấy dữ liệu các phần tử trong mảng
++process: dùng hàm splice để xóa hết tất cả các phần tử trong mảng hiện có
++output: thông báo đã xóa hay chưa cho user
+*/
 document.getElementById("xoahet").onclick = function () {
   if (mang_SN.length > 0) {
     mang_SN.splice(0, mang_SN.length);
@@ -37,6 +52,11 @@ document.getElementById("xoahet").onclick = function () {
 };
 
 // Tính tổng các số dương
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: tạo 1 biến sum để hứng giá trị + vào từng phần tử khi duyệt mảng
++output: đưa ra tổng các số dương
+*/
 document.getElementById("tinhc1").onclick = function () {
   var sum = 0;
   var len = mang_SN.length;
@@ -49,6 +69,11 @@ document.getElementById("tinhc1").onclick = function () {
 };
 
 // Đếm số dương
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: tạo 1 biến tạm dựa vào điều kiện dương và duyệt mảng để tăng biến tạm lên
++output: xuất ra kết quả đếm số dươngs
+*/
 document.getElementById("tinhc2").onclick = function () {
   var dem = 0;
   var len = mang_SN.length;
@@ -59,7 +84,13 @@ document.getElementById("tinhc2").onclick = function () {
     Số lượng số dương trong mảng là: ${dem};
     `;
 };
+
 // Tìm số nhỏ nhất
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: duyệt qua từng phần tử trong mảng rồi so sáng với 1 biến minVal được gán trước
++output: xuất ra số nhỏ nhất cần tìm
+*/
 document.getElementById("tinhc3").onclick = function () {
   var minVal = mang_SN[0];
   for (var i = 0; i < mang_SN.length; i++) {
@@ -71,6 +102,11 @@ document.getElementById("tinhc3").onclick = function () {
 };
 
 // Tìm số dương nhỏ nhất
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: duyệt qua từng phần tử của mảng với điệu số dương, dùng một biến minVal để lưu lại giá trị đầu, sau khi duyệt so sánh thì gán lại giá trị mới
++output: xuất ra số dương nhỏ nhất
+*/
 document.getElementById("tinhc4").onclick = function () {
   var minVal = mang_SN[0];
   for (var i = 0; i < mang_SN.length; i++) {
@@ -82,6 +118,11 @@ document.getElementById("tinhc4").onclick = function () {
 };
 
 //Tìm số chẵn cuối cùng
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: duyệt qua tugnwf phần tử xét điều kiện chẵn, gán cho giá trị cuối cùng thỏa mãn
++output: xuất ra số chẵn cuối cùng
+*/
 document.getElementById("tinhc5").onclick = function () {
   var sochanCC = -1;
   for (var i = 0; i < mang_SN.length; i++) {
@@ -99,6 +140,11 @@ document.getElementById("tinhc5").onclick = function () {
 };
 
 // Đổi chỗ
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: xét trường hợp nhập sai vị trí và trường hợp dúng vị trí, đúng thì dùng thuất toán đổi chỗ 
++output: đưa ra mảng sau khi đổi chỗ
+*/
 document.getElementById("tinhc6").onclick = function () {
     var v1 = document.getElementById("c6vt1").value * 1;
     var v2 = document.getElementById("c6vt2").value * 1;
@@ -130,6 +176,11 @@ document.getElementById("tinhc6").onclick = function () {
 }
 
 // Sắp xếp tăng dần
+/*
++input: lấy dữ liệu từng phần tử trong mảng
++process: dùng hàm sort để sắp xếp tăng dần
++output: xuất ra mảng sau khi sắp xếp 
+*/
 document.getElementById("tinhc7").onclick = function () {
     var len = mang_SN.length;
     // for (var i = 0; i < len-1; i++) {
@@ -149,6 +200,11 @@ document.getElementById("tinhc7").onclick = function () {
 }
 
 // Kiểm tra số nguyên tố 
+/*
++input: lấy dữ liệu 1 biến
++process: xét 2 TH, TH duyệt mảng thì ta sẽ xem coi nó có chia hết các ước của nó trước không, nếu có thì false, ko thì return về true
++output: xuất ra dạng boolean kiểm tra SNT
+*/
 
 function KiemTraSNT (bien) {
     if (bien < 2) return false;
@@ -161,6 +217,11 @@ function KiemTraSNT (bien) {
 }
 
 //Tìm số nguyên tố đầu tiên 
+/*
++input: lấy dữ liệu từ mảng 
++process: dùng hàm để tìm ra số nguyên tố đầu tiên trong mảng
++output: xuất ra kết quả số nguyên tố đầu tiên
+*/
 function TimSNT_DauTien () {
     var len = mang_SN.length;
     for (var i = 0; i < len; i++) {
@@ -184,6 +245,11 @@ document.getElementById("tinhc8").onclick = function () {
 }
 
 //Đếm số lượng số nguyên
+/*
++input: lấy dữ liệu từ mảng
++process: cho 1 biến tạm dem để tăng giá trị khi duyệt mảng gặp đúng điều kiện là số nguyên
++output: xuất ra số lượng số nguyên
+*/
 document.getElementById("tinhc9").onclick = function () {
     var dem = 0;
     for (var i = 0; i < mang_SN.length; i++) {
@@ -194,7 +260,12 @@ document.getElementById("tinhc9").onclick = function () {
     `
 }
 
-//So sáng số lượng số âm và dương 
+//So sánh số lượng số âm và dương 
+/*
++input: lấy dữ liệu từ mảng 
++process: cho 2 biến tạm để lưu giữ số lượng âm và dương khi duyệt mảng thì sẽ gặp đúng điều kiện sẽ tăng các biến lên phù hợp, sau đó so sánh 2 biến để đưa ra kết quả đúng
++output: thông báo người dùng phép so sánh giữa 2 số lượng
+*/
 document.getElementById("tinhc10").onclick = function () {
     var demA = 0;
     var demD = 0;
