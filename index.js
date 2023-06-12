@@ -192,7 +192,9 @@ document.getElementById("tinhc7").onclick = function () {
     //         }
     //     }
     // }
-    var sx_mang = mang_SN.sort();
+    var sx_mang = mang_SN.sort(function(a,b) {
+      return a - b;
+    });
     sx_mang = sx_mang.join(',');
     document.getElementById("xuatc7").innerHTML = `
     Mảng sau khi sắp xếp tăng dần là: ${sx_mang}
