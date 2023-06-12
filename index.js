@@ -182,7 +182,7 @@ document.getElementById("tinhc6").onclick = function () {
 +output: xuất ra mảng sau khi sắp xếp 
 */
 document.getElementById("tinhc7").onclick = function () {
-    var len = mang_SN.length;
+    //var len = mang_SN.length;
     // for (var i = 0; i < len-1; i++) {
     //     for (var j =i+1; j < len; j++) {
     //         if (mang_SN[i] > mang_SN[j]) {
