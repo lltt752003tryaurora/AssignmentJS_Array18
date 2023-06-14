@@ -112,9 +112,16 @@ document.getElementById("tinhc4").onclick = function () {
   for (var i = 0; i < mang_SN.length; i++) {
     if (mang_SN[i] < minVal && mang_SN[i] > 0) minVal = mang_SN[i];
   }
-  document.getElementById("xuatc4").innerHTML = `
+  if (minVal > 0) {
+    document.getElementById("xuatc4").innerHTML = `
     Số dương nhỏ nhất trong mảng là: ${minVal}
-    `;AAAAAA
+    `;
+  } else {
+    document.getElementById("xuatc4").innerHTML = `
+    Không có số dương nào trong mảng.
+    `;
+  }
+  
 };
 
 //Tìm số chẵn cuối cùng
