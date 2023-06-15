@@ -108,11 +108,17 @@ document.getElementById("tinhc3").onclick = function () {
 +output: xuất ra số dương nhỏ nhất
 */
 document.getElementById("tinhc4").onclick = function () {
-  var minVal = mang_SN[0];
+  var arrTemp = [];
   for (var i = 0; i < mang_SN.length; i++) {
-    if (mang_SN[i] < minVal && mang_SN[i] > 0) minVal = mang_SN[i];
+    if (mang_SN[i] > 0) {
+      arrTemp.push(mang_SN[i]);
+    }
   }
-  if (minVal > 0) {
+  var minVal = arrTemp[0];
+  for (var i = 1; i < arrTemp.length; i++) {
+    if (arrTemp[i] < minVal) minVal = mang_SN[i];
+  }
+  if (arrTemp.length > 0) {
     document.getElementById("xuatc4").innerHTML = `
     Số dương nhỏ nhất trong mảng là: ${minVal}
     `;
@@ -121,7 +127,6 @@ document.getElementById("tinhc4").onclick = function () {
     Không có số dương nào trong mảng.
     `;
   }
-  
 };
 
 //Tìm số chẵn cuối cùng
